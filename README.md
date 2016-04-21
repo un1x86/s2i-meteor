@@ -7,5 +7,5 @@ s2i build https://github.com/moravianlibrary/Rozcestnik-studovna.git meteor-buil
 docker run -d -p 80:8080 -e "ROOT_URL=http://vknihovne.mzk.cz/" -e "PORT=8080" rozcestnik 
 
 oc new-build https://github.com/moravianlibrary/s2i-meteor.git --name=meteor-builder
-oc new-app meteor-builder~https://github.com/moravianlibrary/Rozcestnik-studovna.git --strategy=source
+oc new-app meteor-builder~https://github.com/moravianlibrary/Rozcestnik-studovna.git -e ROOT_URL=<url>,PORT=8080 --strategy=source
 ```
