@@ -15,7 +15,7 @@ LABEL io.k8s.description="Platform for building meteor apps" \
       io.openshift.tags="builder,meteor"
 
 # Install required packages here:
-RUN yum install -y epel-release nodejs npm && yum clean all -y
+RUN yum install -y epel-release && yum install -y nodejs npm && yum clean all -y
 
 # This default user is created in the openshift/base-centos7 image
 USER 1001
