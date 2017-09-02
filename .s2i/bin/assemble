@@ -29,4 +29,5 @@ cd /tmp/src/
 $HOME/.meteor/meteor build --directory /tmp/bundle-dir
 cd /tmp/bundle-dir/bundle/programs/server/
 $HOME/.meteor/meteor npm install
+$HOME/.meteor/meteor npm install babel-runtime
 mv /tmp/bundle-dir/bundle $HOME/built_app
