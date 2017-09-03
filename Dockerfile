@@ -31,7 +31,7 @@ RUN curl -sL https://install.meteor.com | sed s/--progress-bar/-sL/g | /bin/sh
 COPY ./.s2i/bin/ /usr/libexec/s2i
 
 # TODO: Drop the root user and make the content of /opt/app-root owned by user 1001
-#RUN chown -R 1001:1001 /opt/app-root
+RUN chown -R 1001:1001 /opt/app-root
 
 # Set the default port for applications built using this image
 EXPOSE 8080
