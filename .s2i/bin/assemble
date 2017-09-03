@@ -28,6 +28,12 @@ echo "---> Building application from source..."
 cd /tmp/src/
 $HOME/.meteor/meteor build --directory /tmp/bundle-dir
 cd /tmp/bundle-dir/bundle/programs/server/
+
+echo "---> Install npm packages..."
+ls -la
+cat package.json
 $HOME/.meteor/meteor npm install
 $HOME/.meteor/meteor npm install babel-runtime bcrypt
+
+echo "---> Move package to home..."
 mv /tmp/bundle-dir/bundle $HOME/built_app
