@@ -33,7 +33,7 @@ echo "---> Install npm packages..."
 ls -la
 cat package.json
 $HOME/.meteor/meteor npm install
-$HOME/.meteor/meteor npm install babel-runtime bcrypt
+npm install babel-runtime bcrypt
 
 echo "---> Move package to home..."
 mv /tmp/bundle-dir/bundle $HOME/built_app
