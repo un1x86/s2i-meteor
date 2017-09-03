@@ -19,6 +19,9 @@ RUN yum install -y epel-release
 RUN yum install -y https://kojipkgs.fedoraproject.org//packages/http-parser/2.7.1/3.el7/x86_64/http-parser-2.7.1-3.el7.x86_64.rpm 
 RUN yum install -y nodejs npm GraphicsMagick && yum clean all -y
 
+# TODO: Drop the root user and make the content of /opt/app-root owned by user 1001
+RUN chown -R 1001:1001 /opt/app-root
+
 # This default user is created in the openshift/base-centos7 image
 USER 1001
 
@@ -30,8 +33,7 @@ RUN curl -sL https://install.meteor.com | sed s/--progress-bar/-sL/g | /bin/sh
 # Copy the S2I scripts to /usr/libexec/s2i, since openshift/base-centos7 image sets io.openshift.s2i.scripts-url label that way, or update that label
 COPY ./.s2i/bin/ /usr/libexec/s2i
 
-# TODO: Drop the root user and make the content of /opt/app-root owned by user 1001
-RUN chown -R 1001:1001 /opt/app-root
+
 
 # Set the default port for applications built using this image
 EXPOSE 8080
