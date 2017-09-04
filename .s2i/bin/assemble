@@ -38,3 +38,9 @@ mv /tmp/bundle-dir/bundle $HOME/built_app
 
 echo "---> Cleanup soruce..."
 rm -rf /tmp/src
+
+echo "---> Modify permiossions"
+ls -la $HOME/.meteor
+echo $USER
+
+chown -R $USER $HOME/
