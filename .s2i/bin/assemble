@@ -40,7 +40,5 @@ echo "---> Cleanup soruce..."
 rm -rf /tmp/src
 
 echo "---> Modify permiossions"
-ls -la $HOME/.meteor
-echo $USER
 
-chown -R $USER $HOME/
+chown -R default.root $HOME/
