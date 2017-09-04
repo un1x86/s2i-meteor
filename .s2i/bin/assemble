@@ -26,14 +26,15 @@ echo "---> Building application from source..."
 # TODO: Add build steps for your application, eg npm install, bundle install
 
 cd /tmp/src/
+$HOME/.meteor/meteor npm install
 $HOME/.meteor/meteor build --directory /tmp/bundle-dir
 cd /tmp/bundle-dir/bundle/programs/server/
 
 echo "---> Install npm packages..."
-ls -la
-cat package.json
 $HOME/.meteor/meteor npm install
-npm install babel-runtime bcrypt
 
 echo "---> Move package to home..."
 mv /tmp/bundle-dir/bundle $HOME/built_app
+
+echo "---> Cleanup soruce..."
+rm -rf /tmp/src
