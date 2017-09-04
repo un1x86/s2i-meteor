@@ -20,7 +20,7 @@ RUN yum install -y https://kojipkgs.fedoraproject.org//packages/http-parser/2.7.
 RUN yum install -y GraphicsMagick && yum clean all -y
 
 # TODO: Drop the root user and make the content of /opt/app-root owned by user 1001
-RUN chown -R 1001:1001 /opt/app-root
+#RUN chown -R 1001:1001 /opt/app-root
 
 # This default user is created in the openshift/base-centos7 image
 USER 1001
