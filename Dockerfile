@@ -17,7 +17,7 @@ LABEL io.k8s.description="Platform for building meteor apps" \
 # Install required packages here:
 RUN yum install -y epel-release 
 RUN yum install -y https://kojipkgs.fedoraproject.org//packages/http-parser/2.7.1/3.el7/x86_64/http-parser-2.7.1-3.el7.x86_64.rpm 
-RUN yum install -y nodejs npm GraphicsMagick && yum clean all -y
+RUN yum install -y GraphicsMagick && yum clean all -y
 
 # TODO: Drop the root user and make the content of /opt/app-root owned by user 1001
 RUN chown -R 1001:1001 /opt/app-root
