@@ -38,7 +38,3 @@ mv /tmp/bundle-dir/bundle $HOME/built_app
 
 echo "---> Cleanup soruce..."
 rm -rf /tmp/src
-
-echo "---> Modify permiossions"
-
-chown -R default.root $HOME/
