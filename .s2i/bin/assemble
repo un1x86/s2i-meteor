@@ -35,6 +35,3 @@ $HOME/.meteor/meteor npm install
 
 echo "---> Move package to home..."
 mv /tmp/bundle-dir/bundle $HOME/built_app
-
-echo "---> Cleanup soruce..."
-rm -rf /tmp/src
